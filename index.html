@@ -1,229 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Hover Effect</title>
-    <style>
-        /* 기존 CSS 코드 */
-        .body {
-            margin: 0;
-        }
-        #wrap {
-            width: 1270px;
-            height: 2000px;
-            margin: 0 auto;
-        }
-        header {
-            width: 100%;
-            height: 118px;
-        }
-        header > div {
-            float: left;
-            height: 118px;
-        }
-        #main {
-            width: 154px;
-            height: 100%;
-            text-align: center;
-        }
-        #logo {
-            width: 1126px;
-            height: 100%;
-            text-align: center;
-            margin-left: -85px;
-        }
-        header #main img {
-            width: 50px;
-            height: 60px;
-            margin-top: 25px;
-        }
-        header #logo img {
-            margin-top: 15px;
-            width: 250px;
-            height: 80px;
-        }
-        #menu {
-            width: 80%;
-            height: 85px;
-            margin: 0 auto;
-        }
-        #menu nav {
-            width: 100%;
-            height: 85px;
-            position: relative;
-            z-index: 999;
-        }
-        #menu nav #main-menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        #menu nav #main-menu ul li {
-            flex: 1;
-            height: 85px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        #menu nav #main-menu ul li a {
-            width: 100%;
-            text-decoration: none;
-            color: gray;
-            user-select: none;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        #menu nav #main-menu ul li a:hover {
-            color: #000;
-            margin-bottom: -10px;
-        }
-        #menu nav #main-menu ul li a:hover::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            height: 1.5px;
-            background-color: #000;
-        }
-
-        #sub-header {
-            width: 100%;
-            height: 100px;
-            margin-left: 80px;
-        }
-        h1 {
-            font-size: 24px;
-            padding: 50px 0 0 0;
-        }
-        .main {
-            width: 100%;
-            height: 100%;
-        }
-        #main1 {
-            margin-top: 70px;
-            width: 100%;
-            height: 600px;
-            display: flex;
-            justify-content: space-around;
-            margin-left: -50px;
-        }
-        #main01, #main02, #main03, #main04, #main05, #main06 {
-            width: 200px;
-            height: 300px;
-        }
-
-        #main2 {
-            width: 100%;
-            height: 550px;
-            display: flex;
-            justify-content: space-around;
-            margin-left: -50px;
-        }
-        #main1 img, #main2 img {
-            width: 280px;
-            height: 280px;
-        }
-        #main1 a {
-            text-decoration: none;
-        }
-        #main1 a:hover {
-            opacity: 0.5;
-        }
-        #main2 a {
-            text-decoration: none;
-        }
-        #main2 a:hover {
-            opacity: 0.5;
-        }
-        p {
-            font-size: 9pt;
-            width: 280px;
-            height: 100px;
-            text-align: left;
-            line-height: 20px;
-        }
-        span {
-            color: rgb(53, 92, 165);
-        }
-        #main3 {
-            margin-top: 20px;
-            width: 100%;
-            height: 700px;
-            text-align: center;
-        }
-        h2 {
-            padding-top: 30px;
-            padding-bottom: 30px;
-            text-align: center;
-            font-size: 24px;
-            border-top :solid 1px #d6d6d6;
-            border-bottom: solid 1px #d6d6d6;
-        }
-        #sub-main3 {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 80px;
-        }
-        #main3-01, #main3-02, #main3-03 {
-            width: 350px;
-            height: 440px;
-        }
-        #main3-01 img, #main3-02 img, #main3-03 img {
-            width: 100%;
-            height: 100%;
-            transition: opacity 0.5s ease-in-out;
-            border-radius: 10px;
-        }
-        .button {
-            margin-top: 75px;
-            text-align: center;
-        }
-        .small-button {
-            display: inline-block;
-            padding: 25px 40px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #000;
-            text-decoration: none;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .small-button:hover {
-            background-color: #a5a5a5;
-            transform: scale(1.05);
-        }
-        .small-button:active {
-            background-color: #b6b6b6;
-        }
-        #footer {
-            width: 100%;
-            height: 100px;
-            background-color: gainsboro;
-            text-align: left;
-            padding: 20px 0;
-        }
-        .footer-content {
-            width: 100%;
-            margin-left: 20px;
-            line-height: 1.6;
-        }
-        .footer-content p {
-            font-size: 9pt;
-            margin: 5px 0;
-        }
-    </style>
+    <title>Comments</title>
 </head>
 <body>
-    <div id="sub-main3">
+    <div id="wrap">
+        <header>
+            <div id="main">
+                <a href="#"><img src="https://github.com/chej1027/ooa/assets/169350225/3804218c-71c4-470e-a68a-24219c510996" alt="B"></a>
+            </div>
+            <div id="logo">
+                <a href="#"><img src="https://github.com/chej1027/ooa/assets/169350225/6f80d41a-8ab2-4a95-95ce-94dafdd5e870" alt="로고"></a>
+            </div>
+        </header>
+        <div id="menu">
+            <nav>
+                <div id="main-menu">
+                    <ul>
+                        <li>
+                            <a href="#">페이지1</a>
+                        </li>
+                        <li>
+                            <a href="#">페이지2</a>
+                        </li>
+                        <li>
+                            <a href="#">페이지3</a>
+                        </li>
+                        <li>
+                            <a href="#">페이지4</a>
+                        </li>
+                        <li>
+                            <a href="#">comments</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="sub-header">
+            <h1>reviews</h1>
+        </div>
+        <div class="main">
+            <div id="main1">
+                <div id="main01">
+                    <a href="#">
+                        <img src="https://github.com/chej1027/ooa/assets/169350225/c28c8519-a323-4866-a66e-ea4babf1f392" alt="">
+                    </a>
+                    <p> Mi rincón preferido.<span> #plantas #cactus #diptyque #lestopettes #figuier #sunny</span>
+                       <br><br> 내가 제일 좋아하는 코너</p>
+                </div>
+                <div id="main02">
+                    <a href="#">
+                        <img src="https://github.com/chej1027/ooa/assets/169350225/4e91df8c-5255-4c8b-88fd-1d5f78210fe6" alt="">
+                    </a>
+                    <p>Mes parfums. 
+                        <span>#untitled #MMM #Tamdao
+                            #Volutes #Diptyque #Rain #MarcJacobs #leblogdemarius</span>
+                        <br><br>나의향수들.
+                        </p>
+                </div>
+                <div id="main03">
+                    <a href="#">
+                        <img src="https://github.com/chej1027/ooa/assets/169350225/2a133fb3-1b1a-4138-b7ee-4ff32923eeb2" alt="">
+                    </a>
+                    <p> <span>#merci #diptyque #collection34 #bougie #bruxelles #chezmoicasenttropbon</span></p>
+                </div>
+                </div>
+                
+            <div id="main2">
+                <div id="main04">
+                     <a href="#">
+                <img src="https://github.com/chej1027/ooa/assets/169350225/80e8d288-c3c4-42c8-95dd-0354835199c7" alt="">
+                    </a>
+                    <p><span>#patternmaking #draping</span><br>
+                        Giant <span>#diptyque</span> candle jar acts as an paper weight today. Smells lovely too.
+                        This is when the <span>#dayjobbecomesfun</span>!!
+                        <br><br>커다란 딥티크 캔들은 오늘 문진 역할을 하고 있다. 향기도 사랑스럽다. 이럴 때면 일이 재미있게 느껴지지!</p>
+                        </div>
+                <div id="main05">
+                    <a href="#">
+                        <img src="https://github.com/chej1027/ooa/assets/169350225/31aedbaf-9088-4872-a748-ee3e61385ebe" alt="">
+                    </a>
+                    <p>Oh yes! Love my prezzies!<br>
+                        <span>#diptyquecandle <br>
+                            #wedgewood#verawang #flowers</span>
+                        <br><br>와, 선물들 완전 맘에 든다!
+                        </p>
+                </div>
+                <div id="main06">
+                    <a href="#">
+                        <img src="https://github.com/chej1027/ooa/assets/169350225/15fa41ea-f809-462f-8fac-06b0fa0afa98" alt="">
+                    </a>
+                    <p>1603호에서 내가 제일 좋아하는 공간.<br>
+                        Good night.<br>
+                        <span>#잠들기전 #음악감상 #야마하 #딥티크 #캔들 #플라워 #꽃스타그램 #일상 #데일리 #daily #instadaily #music #굿나잇
+                            #goodnight #diptyque #flower</span></p>
+                    </div>
+                </div>
+                <div id="main3">
+                    <h2>Find your perfume</h2>
+                   <div id="sub-main3">
         <div id="main3-01">
             <a href="https://www.diptyqueparis.com/en_us/p/orpheon-eau-de-parfum-75ml.html" target="_blank">
                 <img id="img1" src="https://github.com/chej1027/ooa/assets/169350225/a0e43e81-31b0-409b-9f76-c69ab824e4c2" alt="">
@@ -243,8 +121,16 @@
     <div class="button">
         <a href="https://www.diptyqueparis.com/en_us/l/gift-ideas/nos-iconiques.html" target="_blank" class="small-button">BEST-SELLERS</a>
     </div>
+        </div>
+        </div>
+        <div id="footer">
+            <div class="footer-content">
+                <p>천은지</p>
+            </div>
+        </div>
+    </div>
 
-    <script>
+     <script>
         document.getElementById('img1').addEventListener('mouseover', function() {
             this.src = 'https://github.com/chej1027/ooa/assets/169350225/36872704-ae11-42da-ab94-992362112ba5';
         });
